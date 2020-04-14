@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --vendor-source-map",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build_lib": "ng build todotor --watch",
+    "mock": "nodemon --watch mock --exec jason-server --port 3020 mock/db.jason --routes mock/routes.json --middlewares mock/json_server_midlvare.js",
+    "start-dev": "concurrently --kill-others \"npm run mock\" \"npm start -- --vendor-source-map\""
   },
   "private": true,
   "dependencies": {
@@ -19,7 +22,7 @@
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
