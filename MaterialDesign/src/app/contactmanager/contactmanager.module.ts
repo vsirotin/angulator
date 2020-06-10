@@ -9,12 +9,15 @@ import { MaterialModule } from '../shared/material/material.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule} from '@angular/router'
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 const routes : Routes = [
   { path : '', component: ContactManagerAppComponent,
     children: [
+      { path: ':id', component : MainContentComponent },
       { path: '', component : MainContentComponent }
     ] },
 
@@ -22,13 +25,21 @@ const routes : Routes = [
 ];
 
 @NgModule({
-  declarations: [ContactManagerAppComponent, ToolbarComponent,  MainContentComponent, SidenavComponent],
+  declarations: [
+    ContactManagerAppComponent, 
+    ToolbarComponent,  
+    MainContentComponent, 
+    SidenavComponent],
   imports: [
     CommonModule,
+    HttpClientModule,
     MaterialModule,
     FormsModule,
     FlexLayoutModule,
     RouterModule.forChild(routes)
+  ],
+  providers : [
+    UserService
   ]
 })
 export class ContactmanagerModule { }
