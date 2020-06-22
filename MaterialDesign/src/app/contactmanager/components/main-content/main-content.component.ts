@@ -22,7 +22,7 @@ export class MainContentComponent implements OnInit {
       let id = params['id'];
       console.log("MainContentComponent.ngOnInit params=", params)
       console.log("MainContentComponent.ngOnInit id=", id)
-      if(!id)id = 1;
+      //if(!id)id = 1;
       this.user = this.userServuce.userById(id);
       
       this.userServuce.users.subscribe(users => {

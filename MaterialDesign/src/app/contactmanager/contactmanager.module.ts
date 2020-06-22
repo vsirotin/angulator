@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule} from '@angular/router'
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NotesComponent } from './components/notes/notes.component';
 
 
 
@@ -20,7 +21,6 @@ const routes : Routes = [
       { path: ':id', component : MainContentComponent },
       { path: '', component : MainContentComponent }
     ] },
-
   { path : '**', redirectTo : '' }
 ];
 
@@ -29,7 +29,7 @@ const routes : Routes = [
     ContactManagerAppComponent, 
     ToolbarComponent,  
     MainContentComponent, 
-    SidenavComponent],
+    SidenavComponent, NotesComponent],
   imports: [
     CommonModule,
     HttpClientModule,
