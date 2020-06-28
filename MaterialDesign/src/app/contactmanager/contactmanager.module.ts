@@ -6,12 +6,14 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 import { MaterialModule } from '../shared/material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule} from '@angular/router'
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NotesComponent } from './components/notes/notes.component';
+import { NewContactDialogComponent } from './components/new-contact-dialog/new-contact-dialog.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -29,13 +31,15 @@ const routes : Routes = [
     ContactManagerAppComponent, 
     ToolbarComponent,  
     MainContentComponent, 
-    SidenavComponent, NotesComponent],
+    SidenavComponent, NotesComponent, NewContactDialogComponent],
   imports: [
     CommonModule,
     HttpClientModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
+    MatNativeDateModule, 
     RouterModule.forChild(routes)
   ],
   providers : [
