@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class SidenavComponent implements OnInit {
 
  private isSmall : boolean = false;
+ isDarkTheme : boolean = false;
 
  users: Observable<User[]>;
 
@@ -48,6 +49,10 @@ export class SidenavComponent implements OnInit {
   
   isScreenSmall() : boolean {
     return this.isSmall;
+  }
+
+  toggleTheme (){
+    this.isDarkTheme = !this.isDarkTheme
   }
 
 }
