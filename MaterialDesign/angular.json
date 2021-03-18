@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MaterialDesign"
+    }
+  },
+  "defaultProject": "MaterialDesign",
+  "cli": {
+    "analytics": false
+  }
 }
