@@ -7,6 +7,7 @@ import { DemoRoutingModule } from './demo-routing.module';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { FlexboxComponent } from './flexbox/flexbox.component';
 import { EditorComponent } from './editor/editor.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 
@@ -17,6 +18,7 @@ import { EditorComponent } from './editor/editor.component';
     DemoRoutingModule,
     MaterialModule,
     FlexLayoutModule,
+    CKEditorModule,
     FormsModule
   ]
 })
